@@ -90,7 +90,7 @@
             bindings = <
         &kp EXCL  &kp AT  &kp HASH  &kp DOLLAR  &kp PERCENT    &kp CARET  &kp AMPERSAND  &kp KP_ASTERISK      &kp SQT   &kp DQT
         &trans    &trans  &trans    &trans      &trans         &trans     &trans         &trans               &trans    &trans
-&trans  &trans    &trans  &trans    &trans      &trans         &kp UNDER  &kp EQUAL      &mt COLON SEMICOLON  &kp PIPE  &kp BACKSLASH  &kp HOME
+&trans  &trans    &trans  &trans    &trans      &trans         &kp PLUS   &kp EQUAL      &mt COLON SEMICOLON  &kp PIPE  &kp BACKSLASH  &kp HOME
                           &trans    &trans      &trans         &trans     &trans         &trans
             >;
         };
