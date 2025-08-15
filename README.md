@@ -1,6 +1,7 @@
 # eiga's zmk-config
 
 ### Table of contents
+- [Keymap drawer](https://keymap-drawer.streamlit.app/?zmk_url=https%3A%2F%2Fgithub.com%2Fbogdan-zs%2Fzmk-config%2Fblob%2Ftotem%2Fconfig%2Ftotem.keymap)
 - Branches
     - [Corne](#corne)
     - [Charybdis](#charybdis)
