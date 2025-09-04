@@ -51,13 +51,6 @@
             global-quick-tap;
             bindings = <&kp>, <&kp>;
         };
-
-        cut: cut {
-            compatible = "zmk,behavior-tap-dance";
-            label = "CUT";
-            #binding-cells = <0>;
-            bindings = <&kp X>, <&kp LG(X)>;
-        };
     };
 
     combos { compatible = "zmk,combos"; };
