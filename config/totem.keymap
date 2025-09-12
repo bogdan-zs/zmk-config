@@ -53,7 +53,14 @@
         };
     };
 
-    combos { compatible = "zmk,combos"; };
+    combos {
+        compatible = "zmk,combos";
+
+        hyper {
+            bindings = <&kp LS(LA(LC(LEFT_GUI)))>;
+            key-positions = <34 35>;
+        };
+    };
 
     keymap {
         compatible = "zmk,keymap";
