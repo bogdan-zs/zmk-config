@@ -61,6 +61,12 @@
             bindings = <&kp LS(LA(LC(LEFT_GUI)))>;
             key-positions = <34 35>;
         };
+
+        escape {
+            bindings = <&kp ESCAPE>;
+            key-positions = <2 3>;
+            layers = <0>;
+        };
     };
 
     keymap {
