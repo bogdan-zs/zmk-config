@@ -62,10 +62,24 @@
             key-positions = <34 35>;
         };
 
-        escape {
-            bindings = <&kp ESCAPE>;
-            key-positions = <2 3>;
-            layers = <0>;
+        ctrl1 {
+            bindings = <&kp LC(NUMBER_1)>;
+            key-positions = <33 13>;
+        };
+
+        ctr2 {
+            bindings = <&kp LC(NUMBER_2)>;
+            key-positions = <33 12>;
+        };
+
+        ctr3 {
+            bindings = <&kp LC(NUMBER_3)>;
+            key-positions = <33 11>;
+        };
+
+        ctrl4 {
+            bindings = <&kp LC(NUMBER_4)>;
+            key-positions = <33 10>;
         };
     };
 
@@ -85,10 +99,10 @@
         Nav {
             label = "Nav";
             bindings = <
-              &trans          &mkp LCLK  &kp UP_ARROW  &kp LC(B)  &kp LC(NUMBER_1)    &kp LC(NUMBER_4)  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp PLUS
-              &kp LEFT_SHIFT  &kp LEFT   &kp DOWN      &kp RIGHT  &kp LC(NUMBER_2)    &kp LC(NUMBER_5)  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp MINUS
-&kp LEFT_ALT  &kp LG(Z)       &kp LG(X)  &kp LG(C)     &kp LG(V)  &kp LC(NUMBER_3)    &kp LC(NUMBER_6)  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp KP_MULTIPLY  &trans
-                                         &trans        &trans     &trans              &trans            &trans        &kp NUMBER_0
+              &trans          &mkp LCLK  &kp UP_ARROW  &kp LC(B)  &kp LEFT_PARENTHESIS    &kp RIGHT_PARENTHESIS  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp PLUS
+              &kp LEFT_SHIFT  &kp LEFT   &kp DOWN      &kp RIGHT  &kp LEFT_BRACE          &kp RIGHT_BRACE        &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp MINUS
+&kp LEFT_ALT  &kp LG(Z)       &kp LG(X)  &kp LG(C)     &kp LG(V)  &kp LEFT_BRACKET        &kp RIGHT_BRACKET      &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp KP_MULTIPLY  &trans
+                                         &trans        &trans     &trans                  &trans                 &trans        &kp NUMBER_0
             >;
         };
 
