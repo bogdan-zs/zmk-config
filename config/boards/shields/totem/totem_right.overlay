@@ -12,10 +12,61 @@
 
 &kscan0 {
     col-gpios
-        = <&xiao_d 8 GPIO_ACTIVE_HIGH>
-        , <&xiao_d 9 GPIO_ACTIVE_HIGH>
-        , <&xiao_d 10 GPIO_ACTIVE_HIGH>
-        , <&xiao_d 5 GPIO_ACTIVE_HIGH>
-        , <&xiao_d 4 GPIO_ACTIVE_HIGH>
-        ;
+        = <&xiao_d 4  GPIO_ACTIVE_HIGH>
+        , <&xiao_d 5  GPIO_ACTIVE_HIGH>
+        , <&xiao_d 8  GPIO_ACTIVE_HIGH>
+        , <&xiao_d 9  GPIO_ACTIVE_HIGH>
+        , <&xiao_d 10 GPIO_ACTIVE_HIGH>;
+
+&pinctrl {
+    xiao_i2c_default: xiao_i2c_default {
+        group1 {
+            psels = <NRF_PSEL(TWIM_SDA, 1, 11)>, <NRF_PSEL(TWIM_SCL, 1, 12)>;
+            bias-pull-up;
+        };
+    };
+    xiao_i2c_sleep: xiao_i2c_sleep {
+        group1 {
+            psels = <NRF_PSEL(TWIM_SDA, 1, 11)>, <NRF_PSEL(TWIM_SCL, 1, 12)>;
+            low-power-enable;
+        };
+    };
+};
+
+&xiao_i2c {
+    status = "okay";
+    pinctrl-0 = <&xiao_i2c_default>;
+    pinctrl-1 = <&xiao_i2c_sleep>;
+    pinctrl-names = "default", "sleep";
+
+    glidepoint0: glidepoint0@2a {
+        compatible = "cirque,pinnacle";
+        reg = <0x2A>;
+        status = "okay";
+        dr-gpios = <&xiao_d 3 (GPIO_ACTIVE_HIGH)>; // TODO: change maybe
+
+        absolute-mode;
+    };
+};
+
+&zip_gestures {
+    // https://github.com/halfdane/zmk-input-gestures
+
+    tap-detection;
+    inertial-cursor;
+    circular-scroll;
+};
+
+/ {
+    glidepoint0_listener: glidepoint0_listener {
+        compatible = "zmk,input-listener";
+        status = "okay";
+        device = <&glidepoint0>;
+        input-processors = <
+            &zip_gestures
+            &zip_absolute_to_relative
+            &pointer_accel
+            &zip_temp_layer 1 500
+	    >;
+    };
 };
