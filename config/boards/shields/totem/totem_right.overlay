@@ -63,11 +63,16 @@
 
     tap-detection;
     inertial-cursor;
-    circular-scroll;
 };
 
 &pointer_accel {
     input-type = <INPUT_EV_REL>;
+    track-remainders;
+    min-factor = <500>;
+    max-factor = <4000>;
+    speed-threshold = <800>;
+    speed-max = <4000>;
+    acceleration-exponent = <2>;
 };
 
 
@@ -77,6 +82,7 @@
     input-processors = <
         &zip_gestures
         &zip_absolute_to_relative
+        &zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT )
         &pointer_accel
         &zip_temp_layer 1 500
     >;
