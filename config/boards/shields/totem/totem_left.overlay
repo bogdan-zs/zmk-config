@@ -5,11 +5,7 @@
  */
 
 #include "totem.dtsi"
-#include <dt-bindings/input/input-event-codes.h>
-#include <input/processors.dtsi>
-#include <behaviors/input_processor_absolute_to_relative.dtsi>
-#include <dt-bindings/zmk/input_transform.h>
-#include <behaviors/input_gestures_accel.dtsi>
+
 
 &kscan0 {
     col-gpios
@@ -21,22 +17,3 @@
         ;
 };
 
-
-// Cirque Trackpad if the Left side is central, comment otherwise
-
-&pointer_accel {
-    input-type = <INPUT_EV_REL>;
-};
-
-/ {
-    glidepoint_listener: glidepoint_listener {
-        compatible = "zmk,input-listener";
-        status = "okay";
-        device = <&glidepoint_split>;
-        input-processors = <
-            &zip_xy_scaler 3 2
-            &zip_absolute_to_relative
-            &pointer_accel
-        >;
-    };
-};

@@ -70,26 +70,14 @@
     input-type = <INPUT_EV_REL>;
 };
 
-&glidepoint {
-	status = "okay";
-};
 
-// Cirque Trackpad, if the Left side is central, comment otherwise
-
-&glidepoint_split {
-	device = <&glidepoint>;
-};
-
-/ {
-    glidepoint0_listener: glidepoint0_listener {
-        compatible = "zmk,input-listener";
-        status = "disabled";
-        device = <&glidepoint>;
-        input-processors = <
-            &zip_gestures
-            &zip_absolute_to_relative
-            &pointer_accel
-            &zip_temp_layer 1 500
-	    >;
-    };
+&glidepoint_listener {
+    status = "okay";
+    device = <&glidepoint>;
+    input-processors = <
+        &zip_gestures
+        &zip_absolute_to_relative
+        &pointer_accel
+        &zip_temp_layer 1 500
+    >;
 };
