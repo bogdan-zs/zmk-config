@@ -28,13 +28,13 @@
 &pinctrl {
     xiao_i2c_default: xiao_i2c_default {
         group1 {
-            psels = <NRF_PSEL(TWIM_SCL, 1, 11)>, <NRF_PSEL(TWIM_SDA, 1, 12)>;
+            psels = <NRF_PSEL(TWIM_SDA, 1, 11)>, <NRF_PSEL(TWIM_SCL, 1, 12)>;
             bias-pull-up;
         };
     };
     xiao_i2c_sleep: xiao_i2c_sleep {
         group1 {
-            psels = <NRF_PSEL(TWIM_SCL, 1, 11)>, <NRF_PSEL(TWIM_SDA, 1, 12)>;
+            psels = <NRF_PSEL(TWIM_SDA, 1, 11)>, <NRF_PSEL(TWIM_SCL, 1, 12)>;
             low-power-enable;
         };
     };
