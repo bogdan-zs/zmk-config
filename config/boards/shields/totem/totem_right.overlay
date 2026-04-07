@@ -53,13 +53,8 @@
         status = "okay";
         dr-gpios = <&gpio1 0 GPIO_ACTIVE_HIGH>;
 
-        sleep;
         no-taps;
         absolute-mode;
-        absolute-mode-clamp-min-x=<271>;
-        absolute-mode-clamp-max-x=<1713>;
-        absolute-mode-clamp-min-y=<199>;
-        absolute-mode-clamp-max-y=<1388>;
     };
 };
 
@@ -86,7 +81,7 @@
 
 
 / {
-    glidepoint_listener {
+    glidepoint_listener: glidepoint_listener {
     status = "okay";
     device = <&glidepoint>;
     input-processors = <

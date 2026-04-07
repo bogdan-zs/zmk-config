@@ -63,7 +63,7 @@
         };
 
         layer {
-            bindings = <&to 5>;
+            bindings = <&mo 5>;
             key-positions = <33 36>;
         };
     };
