@@ -62,17 +62,18 @@
     // https://github.com/halfdane/zmk-input-gestures
 
     tap-detection;
-    inertial-cursor;
+    prevent_movement_during_tap;
+    /* inertial-cursor; */
 };
 
 &pointer_accel {
     input-type = <INPUT_EV_REL>;
     track-remainders;
-    min-factor = <500>;
-    max-factor = <4000>;
-    speed-threshold = <800>;
-    speed-max = <4000>;
-    acceleration-exponent = <2>;
+    min-factor = <200>;
+    max-factor = <1800>;
+    speed-threshold = <1400>;
+    speed-max = <2600>;
+    acceleration-exponent = <1>;
 };
 
 
