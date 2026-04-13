@@ -53,6 +53,7 @@
         status = "okay";
         dr-gpios = <&gpio1 0 GPIO_ACTIVE_HIGH>;
 
+        sleep;
         no-taps;
         absolute-mode;
     };
@@ -64,8 +65,8 @@
 
     tap-detection;
     prevent_movement_during_tap;
-    circular-scroll;
-    circular-scroll-rim-percent=<7>;
+    /* circular-scroll; */
+    /* circular-scroll-rim-percent=<7>; */
     /* inertial-cursor; */
 };
 
@@ -94,6 +95,7 @@
     scroller {
         layers = <3>;
         input-processors = <
+            &zip_absolute_to_relative
             &zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT)
             &zip_xy_scaler 1 20
             &zip_xy_to_scroll_mapper
