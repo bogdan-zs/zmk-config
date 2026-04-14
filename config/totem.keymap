@@ -66,6 +66,11 @@
             bindings = <&mo 5>;
             key-positions = <33 36>;
         };
+
+        layer3 {
+            bindings = <&mo 3>;
+            key-positions = <23 24>;
+        };
     };
 
     keymap {
