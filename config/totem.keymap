@@ -70,6 +70,7 @@
         layer3 {
             bindings = <&mo 3>;
             key-positions = <23 24>;
+            layers = <1 0>;
         };
     };
 
