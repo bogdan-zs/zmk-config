@@ -56,6 +56,7 @@
 
     combos {
         compatible = "zmk,combos";
+        timeout-ms = <35>;
 
         hyper {
             bindings = <&kp LS(LA(LC(LEFT_GUI)))>;
@@ -65,12 +66,14 @@
         layer {
             bindings = <&mo 5>;
             key-positions = <33 36>;
+            timeout-ms = <30>;
         };
 
         layer3 {
             bindings = <&mo 3>;
             key-positions = <23 24>;
             layers = <1 0>;
+            timeout-ms = <30>;
         };
     };
 
