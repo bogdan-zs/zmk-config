@@ -77,6 +77,16 @@
         };
     };
 
+    macros {
+        tmux: tmux {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(B)>, <&macro_tap>, <&kp N>;
+
+            label = "TMUX";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -133,8 +143,8 @@
         window-manager {
             bindings = <
         &trans            &trans            &kp LS(LA(LC(LG(M))))  &trans            &trans    &trans         &trans  &trans  &trans  &trans
-        &kp LA(NUMBER_4)  &kp LA(NUMBER_3)  &kp LA(NUMBER_2)       &kp LA(NUMBER_1)  &trans    &trans         &trans  &trans  &trans  &trans
-&trans  &trans            &trans            &kp LS(LA(LC(LG(T))))  &trans            &trans    &kp LC(SPACE)  &trans  &trans  &trans  &trans  &trans
+        &kp LA(NUMBER_4)  &kp LA(NUMBER_3)  &kp LA(NUMBER_2)       &kp LA(NUMBER_1)  &trans    &kp LC(SPACE)  &trans  &trans  &trans  &trans
+&trans  &trans            &trans            &kp LS(LA(LC(LG(T))))  &trans            &trans    &trans         &trans  &trans  &trans  &trans  &trans
                                             &trans                 &trans            &trans    &trans         &trans  &trans
             >;
         };
