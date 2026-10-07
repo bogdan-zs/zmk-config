@@ -54,6 +54,14 @@
         };
     };
 
+    macros {
+        tmux_key: tmux_key {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings = <&kp LC(B)>, <&macro_param_1to1>, <&kp MACRO_PLACEHOLDER>;
+        };
+    };
+
     combos {
         compatible = "zmk,combos";
         timeout-ms = <35>;
@@ -141,10 +149,10 @@
 
         tmux {
             bindings = <
-        &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-        &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans  &trans
+                 &tmux_key Q      &tmux_key W      &tmux_key E      &tmux_key R      &tmux_key T      &tmux_key Y      &tmux_key U      &tmux_key I      &tmux_key O      &tmux_key P
+                 &tmux_key A      &tmux_key S      &tmux_key D      &tmux_key F      &tmux_key G      &tmux_key H      &tmux_key J      &tmux_key K      &tmux_key L      &tmux_key SEMICOLON
+&tmux_key ESCAPE  &tmux_key Z      &tmux_key X      &tmux_key C      &tmux_key V      &tmux_key B      &tmux_key N      &tmux_key M      &tmux_key COMMA  &tmux_key DOT    &tmux_key SLASH      &tmux_key APOSTROPHE
+                                  &tmux_key ESCAPE &tmux_key SPACE  &tmux_key TAB    &tmux_key RET    &tmux_key BSPC   &tmux_key UNDERSCORE
             >;
         };
     };
