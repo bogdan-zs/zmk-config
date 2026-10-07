@@ -58,11 +58,6 @@
         compatible = "zmk,combos";
         timeout-ms = <35>;
 
-        hyper {
-            bindings = <&kp LS(LA(LC(LEFT_GUI)))>;
-            key-positions = <34 35>;
-        };
-
         layer {
             bindings = <&mo 5>;
             key-positions = <33 36>;
@@ -75,15 +70,10 @@
             layers = <1 0>;
             timeout-ms = <30>;
         };
-    };
 
-    macros {
-        tmux: tmux {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LC(B)>, <&macro_tap>, <&kp N>;
-
-            label = "TMUX";
+        tmux {
+            bindings = <&mo 6>;
+            key-positions = <35 34>;
         };
     };
 
@@ -146,6 +136,15 @@
         &kp LA(NUMBER_4)  &kp LA(NUMBER_3)  &kp LA(NUMBER_2)       &kp LA(NUMBER_1)  &trans    &kp LC(SPACE)  &trans  &trans  &trans  &trans
 &trans  &trans            &trans            &kp LS(LA(LC(LG(T))))  &trans            &trans    &trans         &trans  &trans  &trans  &trans  &trans
                                             &trans                 &trans            &trans    &trans         &trans  &trans
+            >;
+        };
+
+        tmux {
+            bindings = <
+        &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+        &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
     };
